@@ -1,0 +1,59 @@
+%include	/usr/lib/rpm/macros.perl
+Summary:	Frozen Bubble arcade game
+Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
+Name:		frozen-bubble
+Version:	0.9.3
+Release:	1
+License:	GPL
+Group:		X11/Applications/Games
+Source0:	http://guillaume.cottenceau.free.fr/fb/%{name}-%{version}.tar.bz2
+Source1:	%{name}.desktop
+Icon:		frozen-bubble.xpm
+URL:		http://xpired.temnet.org/
+BuildRequires:	SDL_mixer-devel >= 1.2.2
+BuildRequires:	perl-devel
+BuildRequires:	rpm-perlprov >= 3.0.3-18
+BuildRequires:	smpeg-devel
+%requires_eq	perl
+Requires:	perl-SDL >= 1.16
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+
+%define		_noautoreq	"perl(fbmdkcommon)"
+
+%description
+Full-featured, colorful animated penguin eyecandy, 50 levels of 1p
+game, hours and hours of 2p game, 3 professional quality 20-channels
+musics, 15 stereo sound effects, 7 unique graphical transition
+effects.
+
+%prep
+%setup -q
+
+%build
+%{__make} OPTIMIZE="%{rpmcflags} -Wall" PREFIX="%{_prefix}"
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_applnkdir}/Games}
+%{__make} install PREFIX=$RPM_BUILD_ROOT/usr
+mv $RPM_BUILD_ROOT/usr/bin/* $RPM_BUILD_ROOT%{_bindir}
+mv $RPM_BUILD_ROOT/usr/share/* $RPM_BUILD_ROOT%{_datadir}
+
+install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/%{name}.desktop
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc README AUTHORS CHANGES
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/%{name}
+%{perl_sitearch}/auto/*
+%{perl_sitearch}/*.pm
+%{_pixmapsdir}/*
+%{_applnkdir}/Games/*
