@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	0.9.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
@@ -11,6 +11,7 @@ Source1:	%{name}.desktop
 Icon:		frozen-bubble.xpm
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	perl-devel
+BuildRequires:	perl-SDL
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	smpeg-devel
