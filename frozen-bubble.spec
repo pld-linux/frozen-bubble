@@ -6,10 +6,10 @@ Version:	0.9.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://guillaume.cottenceau.free.fr/fb/%{name}-%{version}.tar.bz2
+Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Icon:		frozen-bubble.xpm
-URL:		http://xpired.temnet.org/
+URL:		http://www.frozen-bubble.org/
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	SDL_mixer-devel >= 1.2.2
