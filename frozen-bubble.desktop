@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Frozen Bubble
+Comment=Frozen Bubble arcade game
+Comment[pl]=Gra zręcznościowa Frozen Bubble
+Icon=frozen-bubble.png
+Exec=frozen-bubble
+Terminal=0
+Type=Application
+# vi: encoding=utf-8
