@@ -9,6 +9,7 @@ Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
 # Source0-md5:	2be5ead2aee72adc3fb643630a774b59
 Source1:	%{name}.desktop
+Patch0:		%{name}-make.patch
 #Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_mixer-devel >= 1.2.2
@@ -36,6 +37,7 @@ efektami przej¶æ.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make} \
