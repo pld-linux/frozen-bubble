@@ -1,0 +1,10 @@
+--- frozen-bubble-1.0.0/c_stuff/Makefile.PL.orig	2002-04-18 11:44:20.000000000 +0200
++++ frozen-bubble-1.0.0/c_stuff/Makefile.PL	2004-07-14 23:44:02.047303392 +0200
+@@ -55,6 +55,5 @@
+     'VERSION_FROM' => 'fb_c_stuff.pm', # finds VERSION
+     'OBJECT'       => 'fb_c_stuff.o',
+     'INC'          => chomp_(`sdl-config --cflags`) . ' -I.',
+-    'OPTIMIZE'     => '-O2 -Wall',
+-    'MAKEFILE'     => 'Makefile_c',
++    'FIRST_MAKEFILE' => 'Makefile_c',
+ );
