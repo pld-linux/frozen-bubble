@@ -10,14 +10,15 @@ Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
 # Source0-md5:	2be5ead2aee72adc3fb643630a774b59
 Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-sdl-2.0.5.patch
 #Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_mixer-devel >= 1.2.2
-BuildRequires:	perl-SDL >= 1.19
+BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	smpeg-devel
-Requires:	perl-SDL >= 1.19
+Requires:	perl-SDL >= 2.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreq	'perl(fbmdkcommon)' 'perl(Gimp)'
@@ -38,6 +39,7 @@ efektami przej¶æ.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
