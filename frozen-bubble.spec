@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	1.0.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
@@ -16,11 +16,10 @@ BuildRequires:	perl-SDL >= 1.19
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	smpeg-devel
-%requires_eq	perl
 Requires:	perl-SDL >= 1.19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(fbmdkcommon)" "perl(Gimp)"
+%define		_noautoreq	'perl(fbmdkcommon)' 'perl(Gimp)'
 
 %description
 Full-featured, colorful animated penguin eyecandy, 50 levels of 1p
