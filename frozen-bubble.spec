@@ -29,6 +29,12 @@ game, hours and hours of 2p game, 3 professional quality 20-channels
 musics, 15 stereo sound effects, 7 unique graphical transition
 effects.
 
+%description -l pl
+Gra o wielu mo¿liwo¶ciach, z kolorowymi animacjami, 50-ma poziomami
+zapewniaj±cymi godziny zabawy, 3-ma profesjonalnej jako¶ci
+20-kana³owymi muzyczkami, 15-ma stereofonicznymi efektami d¼wiêkowymi,
+7-ma unikalnymi graficznymi efektami przej¶æ.
+
 %prep
 %setup -q
 
