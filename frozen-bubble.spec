@@ -7,6 +7,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
+# Source0-md5:	2be5ead2aee72adc3fb643630a774b59
 Source1:	%{name}.desktop
 #Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
