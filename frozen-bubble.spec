@@ -10,9 +10,9 @@ Source0:	http://guillaume.cottenceau.free.fr/fb/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Icon:		frozen-bubble.xpm
 URL:		http://xpired.temnet.org/
-BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
+BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	smpeg-devel
 %requires_eq	perl
 Requires:	perl-SDL >= 1.16
@@ -31,9 +31,10 @@ effects.
 
 %description -l pl
 Gra o wielu mo¿liwo¶ciach, z kolorowymi animacjami, 50-ma poziomami
-zapewniaj±cymi godziny zabawy, 3-ma profesjonalnej jako¶ci
-20-kana³owymi muzyczkami, 15-ma stereofonicznymi efektami d¼wiêkowymi,
-7-ma unikalnymi graficznymi efektami przej¶æ.
+dla jednego gracza, wieloma godzinami zabawy dla dwóch graczy, 3-ma
+profesjonalnej jako¶ci 20-kana³owymi muzyczkami, 15-ma
+stereofonicznymi efektami d¼wiêkowymi, 7-ma unikalnymi graficznymi
+efektami przej¶æ.
 
 %prep
 %setup -q
