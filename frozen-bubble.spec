@@ -19,8 +19,6 @@ BuildRequires:	smpeg-devel
 Requires:	perl-SDL >= 1.16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %define		_noautoreq	"perl(fbmdkcommon)"
 
