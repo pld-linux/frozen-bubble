@@ -19,7 +19,7 @@ BuildRequires:	smpeg-devel
 Requires:	perl-SDL >= 1.19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	"perl(fbmdkcommon)" "perl(Gimp"
+%define		_noautoreq	"perl(fbmdkcommon)" "perl(Gimp)"
 
 %description
 Full-featured, colorful animated penguin eyecandy, 50 levels of 1p
