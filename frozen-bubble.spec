@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	1.0.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
@@ -11,10 +11,10 @@ Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 #Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
-BuildRequires:	perl-devel
-BuildRequires:	perl-SDL >= 1.19
-BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	SDL_mixer-devel >= 1.2.2
+BuildRequires:	perl-SDL >= 1.19
+BuildRequires:	perl-devel
+BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	smpeg-devel
 Requires:	perl-SDL >= 1.19
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,14 +45,14 @@ efektami przej¶æ.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_applnkdir}/Games,%{_applnkdir}/Games/Arcade}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
 	PREFIX=$RPM_BUILD_ROOT/usr \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade/%{name}.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,5 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/*
 %{perl_vendorarch}/*.pm
 %{_pixmapsdir}/*
-%{_applnkdir}/Games/*
+%{_desktopdir}/*
 %{_mandir}/man6/*
