@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	1.0.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://people.mandrakesoft.com/~gc/fb/%{name}-%{version}.tar.bz2
@@ -53,6 +53,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/gfx/.xvpics
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,8 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc README AUTHORS CHANGES
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{perl_vendorarch}/auto/*
+%dir %{perl_vendorarch}/auto/fb_c_stuff
+%{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.so
 %{perl_vendorarch}/*.pm
-%{_pixmapsdir}/*
-%{_desktopdir}/*
+%{_pixmapsdir}/*.png
+%{_desktopdir}/*.desktop
 %{_mandir}/man6/*
