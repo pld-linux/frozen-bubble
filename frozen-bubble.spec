@@ -45,14 +45,14 @@ efektami przej¶æ.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_applnkdir}/Games}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_applnkdir}/Games,%{_applnkdir}/Games/Arcade}
 
 %{__make} install \
 	PREFIX=$RPM_BUILD_ROOT/usr \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/%{name}.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
