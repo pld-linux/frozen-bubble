@@ -1,20 +1,20 @@
---- frozen-bubble-1.0.0/c_stuff/Makefile.PL.orig	2002-04-18 11:44:20.000000000 +0200
-+++ frozen-bubble-1.0.0/c_stuff/Makefile.PL	2004-07-14 23:44:02.047303392 +0200
-@@ -55,6 +55,6 @@
+--- frozen-bubble-2.0.0/c_stuff/Makefile.PL	2006-10-28 22:48:29.128826456 +0200
++++ frozen-bubble-2.0.0/c_stuff/Makefile.PL-new	2006-10-28 22:51:36.862286632 +0200
+@@ -77,6 +77,6 @@
      'VERSION_FROM' => 'fb_c_stuff.pm', # finds VERSION
      'OBJECT'       => 'fb_c_stuff.o',
-     'INC'          => chomp_(`sdl-config --cflags`) . ' -I.',
+     'INC'          => chomp_(`sdl-config --cflags`) . ' ' . chomp_(`pkg-config SDL_Pango --cflags`) . ' -I.',
 -    'OPTIMIZE'     => '-O2 -Wall',
      'MAKEFILE'     => 'Makefile_c',
 +    'FIRST_MAKEFILE' => 'Makefile_c',
  );
---- frozen-bubble-1.0.0/Makefile.orig	2003-02-03 15:36:55.000000000 +0100
-+++ frozen-bubble-1.0.0/Makefile	2004-08-05 18:06:30.313315184 +0200
-@@ -9,7 +9,6 @@
+--- frozen-bubble-2.0.0/Makefile	2006-10-28 22:48:29.196816120 +0200
++++ frozen-bubble-2.0.0/Makefile-new	2006-10-28 22:50:04.315355904 +0200
+@@ -13,7 +13,6 @@
  
  dirs:
  	@if ! perl -e 'use SDL'; then echo -e "\n    *** I need perl-SDL installed"; false; fi
--	@if ! perl -e 'use SDL; ($$mj, $$mn, $$mc) = split /\./, $$SDL::VERSION; exit 1 if $$mj<1 || $$mn<19'; then echo -e "\n    *** I need perl-SDL version 1.19.0 or upper"; false; fi
+-	@if ! perl -e 'use SDL; ($$mj, $$mn, $$mc) = split /\./, $$SDL::VERSION; exit 0 if $$mj > 1 || $$mn >= 19; exit 1'; then echo -e "\n    *** I need perl-SDL version 1.19.0 or upper"; false; fi
  	@for n in . $(DIRS); do \
  		[ "$$n" = "." ] || $(MAKE) -C $$n ;\
  	done
