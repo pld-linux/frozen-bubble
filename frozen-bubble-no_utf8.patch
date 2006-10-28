@@ -1,0 +1,11 @@
+--- frozen-bubble	2006-10-26 22:09:46.000000000 +0200
++++ frozen-bubble-new	2006-10-29 00:51:05.816439944 +0200
+@@ -99,7 +99,7 @@
+ eval(cat_($hiscorefiles{mptrain} = "$ENV{HOME}/.fbhighscores-mptrain"));
+ 
+ textdomain("frozen-bubble");
+-bind_textdomain_codeset("frozen-bubble", "UTF-8");  #- we're going to use SDL-ttf functions using UTF-8 input
++#bind_textdomain_codeset("frozen-bubble", "UTF-8");  #- we're going to use SDL-ttf functions using UTF-8 input
+ our $is_rtl = $ENV{LANGUAGE} =~ /^fa/;
+ 
+ print "        [[ Frozen-Bubble-$version ]]\n\n";
