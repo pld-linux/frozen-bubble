@@ -43,7 +43,7 @@ efektami przej¶æ.
 %build
 %{__make} \
 	OPTIMIZE="%{rpmcflags} -Wall" \
-	ADDCFLAGS="%{rpmcflags}" \
+	OTHERLDFLAGS="%{rpmldflags}" \
 	CC="%{__cc}" \
 	PREFIX="%{_prefix}" \
 	INSTALLDIRS=vendor
