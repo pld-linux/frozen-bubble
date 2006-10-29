@@ -10,6 +10,7 @@ Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
 # Source0-md5:	9fdd84f56e5221e6c58c12eab72459d9
 Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-kill-warning.patch
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_mixer-devel >= 1.2.2
@@ -39,6 +40,7 @@ efektami przej¶æ.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
