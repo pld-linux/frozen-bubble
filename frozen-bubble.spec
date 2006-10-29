@@ -11,7 +11,6 @@ Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-sdl-2.0.5.patch
-Patch2:		%{name}-no_utf8.patch
 #Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_mixer-devel >= 1.2.2
@@ -20,6 +19,7 @@ BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	smpeg-devel
+Requires:	perl(Locale::gettext) >= 1.04
 Requires:	perl-SDL >= 2.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +42,6 @@ efektami przej¶æ.
 %setup -q
 %patch0 -p1
 #%patch1 -p1
-%patch2 -p0
 
 %build
 %{__make} \
