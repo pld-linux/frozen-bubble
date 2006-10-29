@@ -11,10 +11,9 @@ Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-sdl-2.0.5.patch
-#Icon:		%{name}.xpm
 URL:		http://www.frozen-bubble.org/
-BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	SDL_Pango-devel
+BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
@@ -56,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
-	PREFIX=%{_prefix} \
+	PREFIX="%{_prefix}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
