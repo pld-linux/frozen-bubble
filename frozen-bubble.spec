@@ -17,7 +17,7 @@ BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	smpeg-devel
-Requires:	perl(Locale::gettext) >= 1.04
+Requires:	perl-Locale-gettext >= 1.04
 Requires:	perl-SDL >= 2.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
