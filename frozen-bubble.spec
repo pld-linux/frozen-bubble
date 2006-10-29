@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README AUTHORS
 %attr(755,root,root) %{_bindir}/*
+%dir %{_libdir}/frozen-bubble
 %attr(755,root,root) %{_libdir}/frozen-bubble/fb-server
 %{_datadir}/%{name}
 %dir %{perl_vendorarch}/auto/fb_c_stuff
