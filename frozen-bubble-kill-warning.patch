@@ -1,0 +1,21 @@
+diff -Nur frozen-bubble-2.0.0.orig/server/net.c frozen-bubble-2.0.0.warning/server/net.c
+--- frozen-bubble-2.0.0.orig/server/net.c	2006-10-27 10:30:13.000000000 +0000
++++ frozen-bubble-2.0.0.warning/server/net.c	2006-10-29 13:23:21.000000000 +0000
+@@ -335,7 +335,7 @@
+ void connections_manager(void)
+ {
+         struct sockaddr_in client_addr;
+-        ssize_t len = sizeof(client_addr);
++        socklen_t len = sizeof(client_addr);
+         struct timeval tv;
+         static char * greets_msg = NULL;
+         double now, delta, rate;
+@@ -391,7 +391,7 @@
+                 conns = new_conns;
+ 
+                 if (tcp_server_socket != -1 && FD_ISSET(tcp_server_socket, &conns_set)) {
+-                        if ((fd = accept(tcp_server_socket, (struct sockaddr *) &client_addr, (socklen_t *) &len)) == -1) {
++                        if ((fd = accept(tcp_server_socket, (struct sockaddr *) &client_addr, &len)) == -1) {
+                                 l1(OUTPUT_TYPE_ERROR, "accept: %s", strerror(errno));
+                                 continue;
+                         }
