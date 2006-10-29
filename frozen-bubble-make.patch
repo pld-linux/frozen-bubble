@@ -1,5 +1,6 @@
---- frozen-bubble-2.0.0/c_stuff/Makefile.PL	2006-10-28 22:48:29.128826456 +0200
-+++ frozen-bubble-2.0.0/c_stuff/Makefile.PL-new	2006-10-28 22:51:36.862286632 +0200
+diff -Nur frozen-bubble-2.0.0.orig/c_stuff/Makefile.PL frozen-bubble-2.0.0.make/c_stuff/Makefile.PL
+--- frozen-bubble-2.0.0.orig/c_stuff/Makefile.PL	2006-10-19 23:46:35.000000000 +0300
++++ frozen-bubble-2.0.0.make/c_stuff/Makefile.PL	2006-10-29 03:52:06.000000000 +0300
 @@ -77,6 +77,6 @@
      'VERSION_FROM' => 'fb_c_stuff.pm', # finds VERSION
      'OBJECT'       => 'fb_c_stuff.o',
@@ -8,8 +9,9 @@
      'MAKEFILE'     => 'Makefile_c',
 +    'FIRST_MAKEFILE' => 'Makefile_c',
  );
---- frozen-bubble-2.0.0/Makefile	2006-10-28 22:48:29.196816120 +0200
-+++ frozen-bubble-2.0.0/Makefile-new	2006-10-28 22:50:04.315355904 +0200
+diff -Nur frozen-bubble-2.0.0.orig/Makefile frozen-bubble-2.0.0.make/Makefile
+--- frozen-bubble-2.0.0.orig/Makefile	2006-10-05 22:39:10.000000000 +0300
++++ frozen-bubble-2.0.0.make/Makefile	2006-10-29 03:52:06.000000000 +0300
 @@ -13,7 +13,6 @@
  
  dirs:
@@ -18,3 +20,33 @@
  	@for n in . $(DIRS); do \
  		[ "$$n" = "." ] || $(MAKE) -C $$n ;\
  	done
+diff -Nur frozen-bubble-2.0.0.orig/server/Makefile frozen-bubble-2.0.0.make/server/Makefile
+--- frozen-bubble-2.0.0.orig/server/Makefile	2006-10-26 21:42:48.000000000 +0300
++++ frozen-bubble-2.0.0.make/server/Makefile	2006-10-29 03:54:14.000000000 +0300
+@@ -1,22 +1,22 @@
+ PREFIX = /usr/local
+ LIBDIR = $(PREFIX)/lib
+ 
+-CFLAGS ?= -g -Wall -Werror -pipe `pkg-config glib-2.0 --cflags`
++CFLAGS ?= -Wall -Werror -pipe `pkg-config glib-2.0 --cflags`
+ LIBS ?= `pkg-config glib-2.0 --libs`
+ 
+ ALLSRC = fb-server.c log.c tools.c game.c net.c
+ ALLOBJ = $(subst .c,.o,$(ALLSRC))
+ 
+ ifeq (1, $(DEBUG))
+-CFLAGS := $(CFLAGS) $(ADDCFLAGS) -DDEBUG -g
++CFLAGS := $(CFLAGS) $(OPTIMIZE) -DDEBUG -g
+ else
+-CFLAGS := $(CFLAGS) $(ADDCFLAGS)
++CFLAGS := $(CFLAGS) $(OPTIMIZE)
+ endif
+ 
+ all: .depend fb-server
+ 
+ fb-server: $(ALLOBJ)
+-	$(CC) $(LIBS) -o $@ $^
++	$(CC) $(OTHERLDFLAGS) -o $@ $^ $(LIBS)
+ 
+ .c.o:
+ 	$(CC) -I. $(CFLAGS) -DVERSION=\"$(shell cat ../VERSION)\" -c $<
