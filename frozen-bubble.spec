@@ -54,6 +54,7 @@ done
 	CC="%{__cc}" \
 	CPP="%{__cc} -E" \
 	PREFIX="%{_prefix}" \
+	LIBDIR="%{_libdir}" \
 	INSTALLDIRS=vendor
 
 %install
@@ -62,6 +63,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
 	PREFIX="%{_prefix}" \
+	LIBDIR="%{_libdir}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 chmod 755 $RPM_BUILD_ROOT%{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.so
