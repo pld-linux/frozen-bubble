@@ -12,10 +12,10 @@ Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-kill-warning.patch
 URL:		http://www.frozen-bubble.org/
-BuildRequires:	SDL_Pango-devel
-BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	ImageMagick
 BuildRequires:	ImageMagick-coder-png
+BuildRequires:	SDL_Pango-devel
+BuildRequires:	SDL_mixer-devel >= 1.2.2
 BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
