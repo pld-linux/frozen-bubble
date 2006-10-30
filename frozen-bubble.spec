@@ -64,6 +64,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 	PREFIX="%{_prefix}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
+chmod 755 $RPM_BUILD_ROOT%{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.so
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/gfx/.xvpics
