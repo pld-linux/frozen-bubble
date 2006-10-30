@@ -14,6 +14,8 @@ Patch1:		%{name}-kill-warning.patch
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_mixer-devel >= 1.2.2
+BuildRequires:	ImageMagick
+BuildRequires:	ImageMagick-coder-png
 BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	rpm-perlprov >= 3.0.3-18
@@ -43,10 +45,14 @@ efektami przej¶æ.
 %patch1 -p1
 
 %build
+for FILE in gfx/balls/bubble-colourblind-?.gif; do
+	convert -scale 16x16 "$FILE" "${FILE%.gif}-mini.png"
+done
 %{__make} \
 	OPTIMIZE="%{rpmcflags} -Wall" \
 	OTHERLDFLAGS="%{rpmldflags}" \
 	CC="%{__cc}" \
+	CPP="%{__cc} -E" \
 	PREFIX="%{_prefix}" \
 	INSTALLDIRS=vendor
 
