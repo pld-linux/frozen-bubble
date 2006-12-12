@@ -7,5 +7,5 @@ Exec=frozen-bubble
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Categories=Game;BlocksGame;
+Categories=Game;ArcadeGame;
 # vi: encoding=utf-8
