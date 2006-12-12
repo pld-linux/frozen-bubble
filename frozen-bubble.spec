@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	2.0.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
