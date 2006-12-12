@@ -1,4 +1,4 @@
-[Desktop Entry]
+6c[Desktop Entry]
 Name=Frozen Bubble
 Comment=Frozen Bubble arcade game
 Comment[pl]=Gra zręcznościowa Frozen Bubble
@@ -7,5 +7,5 @@ Exec=frozen-bubble
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Categories=Game;BlocksGame;
+Categories=Game;ArcadeGame;
 # vi: encoding=utf-8
