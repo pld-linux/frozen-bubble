@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Frozen Bubble arcade game
-Summary(pl):	Gra zrÍczno∂ciowa Frozen Bubble
+Summary(pl.UTF-8):   Gra zrƒôczno≈õciowa Frozen Bubble
 Name:		frozen-bubble
 Version:	2.1.0
 Release:	1
@@ -32,12 +32,12 @@ game, hours and hours of 2p game, 3 professional quality 20-channels
 musics, 15 stereo sound effects, 7 unique graphical transition
 effects.
 
-%description -l pl
-Gra o wielu moøliwo∂ciach, z kolorowymi animacjami, 50-ma poziomami
-dla jednego gracza, wieloma godzinami zabawy dla dwÛch graczy, 3-ma
-profesjonalnej jako∂ci 20-kana≥owymi muzyczkami, 15-ma
-stereofonicznymi efektami dºwiÍkowymi, 7-ma unikalnymi graficznymi
-efektami przej∂Ê.
+%description -l pl.UTF-8
+Gra o wielu mo≈ºliwo≈õciach, z kolorowymi animacjami, 50-ma poziomami
+dla jednego gracza, wieloma godzinami zabawy dla dw√≥ch graczy, 3-ma
+profesjonalnej jako≈õci 20-kana≈Çowymi muzyczkami, 15-ma
+stereofonicznymi efektami d≈∫wiƒôkowymi, 7-ma unikalnymi graficznymi
+efektami przej≈õƒá.
 
 %prep
 %setup -q
