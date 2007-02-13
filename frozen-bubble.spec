@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Frozen Bubble arcade game
-Summary(pl.UTF-8):   Gra zręcznościowa Frozen Bubble
+Summary(pl.UTF-8):	Gra zręcznościowa Frozen Bubble
 Name:		frozen-bubble
 Version:	2.1.0
 Release:	1
