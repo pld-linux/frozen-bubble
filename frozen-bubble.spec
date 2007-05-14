@@ -2,22 +2,22 @@
 Summary:	Frozen Bubble arcade game
 Summary(pl):	Gra zrêczno¶ciowa Frozen Bubble
 Name:		frozen-bubble
-Version:	2.0.0
-Release:	2
+Version:	2.1.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
-# Source0-md5:	9fdd84f56e5221e6c58c12eab72459d9
+# Source0-md5:	f5eb984897e1ccd52a0d8820d8359861
 Source1:	%{name}.desktop
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-kill-warning.patch
 URL:		http://www.frozen-bubble.org/
-BuildRequires:	ImageMagick
-BuildRequires:	ImageMagick-coder-png
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_mixer-devel >= 1.2.2
+BuildRequires:	gettext-devel
 BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	smpeg-devel
 Requires:	perl-Locale-gettext >= 1.04
@@ -45,12 +45,9 @@ efektami przej¶æ.
 %patch1 -p1
 
 %build
-for FILE in gfx/balls/bubble-colourblind-?.gif; do
-	convert -scale 16x16 "$FILE" "${FILE%.gif}-mini.png"
-done
 %{__make} \
 	OPTIMIZE="%{rpmcflags} -Wall" \
-	OTHERLDFLAGS="%{rpmldflags}" \
+	LDFLAGS="%{rpmldflags}" \
 	CC="%{__cc}" \
 	CPP="%{__cc} -E" \
 	PREFIX="%{_prefix}" \
@@ -66,7 +63,6 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_pixmapsdir},%{_desktopdir}}
 	LIBDIR="%{_libdir}" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-chmod 755 $RPM_BUILD_ROOT%{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.so
 install icons/%{name}-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}/gfx/.xvpics
