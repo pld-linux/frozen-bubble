@@ -3,7 +3,7 @@ Summary:	Frozen Bubble arcade game
 Summary(pl.UTF-8):	Gra zręcznościowa Frozen Bubble
 Name:		frozen-bubble
 Version:	2.2.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://www.frozen-bubble.org/data/%{name}-%{version}.tar.bz2
@@ -43,6 +43,8 @@ efektami przejść.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+
+%{__sed} -i -e 's/-Werror//' server/Makefile
 
 %build
 %{__make} \
