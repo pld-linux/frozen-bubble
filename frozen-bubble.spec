@@ -82,7 +82,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/frozen-bubble/fb-server
 %{_datadir}/%{name}
 %dir %{perl_vendorarch}/auto/fb_c_stuff
-%{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/fb_c_stuff/fb_c_stuff.so
 %{perl_vendorarch}/*.pm
 %{_pixmapsdir}/*.png
