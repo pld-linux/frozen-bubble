@@ -14,7 +14,7 @@ Patch1:		%{name}-kill-warning.patch
 URL:		http://www.frozen-bubble.org/
 BuildRequires:	SDL_Pango-devel
 BuildRequires:	SDL_mixer-devel >= 1.2.2
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	perl-SDL >= 2.1.0
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig
