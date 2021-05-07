@@ -1,16 +1,16 @@
-diff -Nur frozen-bubble-2.0.0.orig/server/net.c frozen-bubble-2.0.0.warning/server/net.c
---- frozen-bubble-2.0.0.orig/server/net.c	2006-10-27 10:30:13.000000000 +0000
-+++ frozen-bubble-2.0.0.warning/server/net.c	2006-10-29 13:23:21.000000000 +0000
-@@ -335,7 +335,7 @@
+diff -urNp -x '*.orig' frozen-bubble-2.2.0.org/server/net.c frozen-bubble-2.2.0/server/net.c
+--- frozen-bubble-2.2.0.org/server/net.c	2008-10-04 21:30:51.000000000 +0200
++++ frozen-bubble-2.2.0/server/net.c	2021-05-07 23:01:36.748775883 +0200
+@@ -394,7 +394,7 @@ static void download_blacklisted_IPs()
  void connections_manager(void)
  {
          struct sockaddr_in client_addr;
 -        ssize_t len = sizeof(client_addr);
 +        socklen_t len = sizeof(client_addr);
          struct timeval tv;
-         static char * greets_msg = NULL;
          double now, delta, rate;
-@@ -391,7 +391,7 @@
+ 
+@@ -454,7 +454,7 @@ void connections_manager(void)
                  conns = new_conns;
  
                  if (tcp_server_socket != -1 && FD_ISSET(tcp_server_socket, &conns_set)) {
